@@ -58,6 +58,8 @@ int main(int argc, char* argv[]){
 	//repr_convert('2', 'S', 0x80000000);
 	//repr_convert('2', 'S', 0x00000000);
 	//repr_convert('S', '2', 0x00000000);
+	//repr_convert('S', '2', 0x80000000);
+	//repr_convert('2', 'S', 0xFFFFFFFE);
 	//repr_convert('2', 'S', 0xffffffff);
 	//repr_convert('2', 'S', 0xe874c27a);
 	//repr_convert('2', 'A', 0x9bc4c27a);

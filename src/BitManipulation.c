@@ -95,6 +95,7 @@ int main(int argc, char* argv[]){
 	//printf("%d\n", RotateLeft(5, 1));
 	//printf("%d\n", RotateLeft(5, 2));
 	//printf("%d\n", RotateLeft(-2, 1));	//11...1110
+	//printf("%d\n", RotateLeft(-11, 5));	//11...11110101
 
 	//printf("%d\n", SwapOddEvenBits(23));
 	//printf("%d\n", SwapOddEvenBits(-1));	//11 ... 11 11 11 11 11 11 11 11 11

@@ -47,6 +47,7 @@ int main(int argc, char* argv[]){
     //printf("f = %g\n", construct_float_sf(0x01, 0x89, 0xABCDEF));
     //printf("f = %g\n", construct_float_sf(0x00, 0x90, 0x7973C0));
     //printf("f = %g\n", construct_float_sf(0x01, 0x90, 0x7973C0));
+    //printf("f = %g\n", construct_float_sf(0x01, 0xFF, 0xFFFFFF));
 
 	
 	/** ---------------------- **/
