@@ -8,7 +8,33 @@
 
 
 void repr_convert(char source_repr, char target_repr, unsigned int repr) {
+	//if invalid source or target, print error and return
+	if((source_repr != 'S' && source_repr != '2') ||
+	   (target_repr != 'S' && target_repr != '2')){
+		printf("error\n");
+		return;
+	}
+	//Edge case where represented number is 0
+	else if (repr == 0x0){
+		//Do nothing
+	}
+	//Edge case where two's complement represents -128,
+	//which cannot be represented in sign
+	else if(source_repr == '2' && target_repr == 'S' && repr == 0x80000000){
+		printf("undefined\n");
+		return;
+	}
+	//Converting from S to 2 and 2 to S is very similar
+	//Flip all bits and add 1. Then flip the MSB to
+	//preserve sign
+	else if((source_repr == 'S' && target_repr == '2') ||
+	   (source_repr == '2' && target_repr == 'S')){
+		repr = (~repr) + 1;
+		repr ^= 0x1 << (sizeof(repr)*8 - 1);
+	}
 
+
+	printf("%x\n", repr);
 }
 
 
@@ -25,7 +51,15 @@ int main(int argc, char* argv[]){
 	(void)argv;
 	/** CREATE TEST CASES HERE **/
 
-
+	repr_convert('S', '2', 0x80000001);
+	repr_convert('S', '2', 0x80000000);
+	repr_convert('2', '2', 0x59f2ca50);
+	repr_convert('F', '2', 0x00394812);
+	repr_convert('2', 'S', 0x80000000);
+	repr_convert('2', 'S', 0x00000000);
+	repr_convert('S', '2', 0x00000000);
+	repr_convert('2', 'S', 0xffffffff);
+	repr_convert('2', 'S', 0xe874c27a);
 
 	
 	/** ---------------------- **/
