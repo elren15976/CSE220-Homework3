@@ -18,9 +18,9 @@ void repr_convert(char source_repr, char target_repr, unsigned int repr) {
 	else if (repr == 0x0){
 		//Do nothing
 	}
-	//Edge case where two's complement represents -128,
-	//which cannot be represented in sign
-	else if(source_repr == '2' && target_repr == 'S' && repr == 0x80000000){
+	//Edge case where two's complement is 10000...000,
+	//which cannot be represented in magnitude form
+	else if(source_repr == '2' && target_repr == 'S' && repr == (0x1 << (sizeof(repr)*8 - 1))){
 		printf("undefined\n");
 		return;
 	}
@@ -34,7 +34,7 @@ void repr_convert(char source_repr, char target_repr, unsigned int repr) {
 	}
 
 
-	printf("%x\n", repr);
+	printf("%08x\n", repr);
 }
 
 
@@ -51,15 +51,17 @@ int main(int argc, char* argv[]){
 	(void)argv;
 	/** CREATE TEST CASES HERE **/
 
-	repr_convert('S', '2', 0x80000001);
-	repr_convert('S', '2', 0x80000000);
-	repr_convert('2', '2', 0x59f2ca50);
-	repr_convert('F', '2', 0x00394812);
-	repr_convert('2', 'S', 0x80000000);
-	repr_convert('2', 'S', 0x00000000);
-	repr_convert('S', '2', 0x00000000);
-	repr_convert('2', 'S', 0xffffffff);
-	repr_convert('2', 'S', 0xe874c27a);
+	//repr_convert('S', '2', 0x80000001);
+	//repr_convert('S', '2', 0x80000000);
+	//repr_convert('2', '2', 0x59f2ca50);
+	//repr_convert('F', '2', 0x00394812);
+	//repr_convert('2', 'S', 0x80000000);
+	//repr_convert('2', 'S', 0x00000000);
+	//repr_convert('S', '2', 0x00000000);
+	//repr_convert('2', 'S', 0xffffffff);
+	//repr_convert('2', 'S', 0xe874c27a);
+	//repr_convert('2', 'A', 0x9bc4c27a);
+	//repr_convert('S', 'S', 0xe87acd7a);
 
 	
 	/** ---------------------- **/

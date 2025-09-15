@@ -96,9 +96,9 @@ int main(int argc, char* argv[]){
 	//printf("%d\n", RotateLeft(5, 2));
 	//printf("%d\n", RotateLeft(-2, 1));	//11...1110
 
-	printf("%d\n", SwapOddEvenBits(23));
-	printf("%d\n", SwapOddEvenBits(-1));	//11 ... 11 11 11 11 11 11 11 11 11
-	printf("%d\n", SwapOddEvenBits(3276));	//00 ... 00 00 00 11 00 11 00 11 00
+	//printf("%d\n", SwapOddEvenBits(23));
+	//printf("%d\n", SwapOddEvenBits(-1));	//11 ... 11 11 11 11 11 11 11 11 11
+	//printf("%d\n", SwapOddEvenBits(3276));	//00 ... 00 00 00 11 00 11 00 11 00
 	
 	/** ---------------------- **/
 	return 0;
